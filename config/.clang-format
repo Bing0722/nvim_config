@@ -1,0 +1,20 @@
+# Clang-Format 配置文件
+Language: Cpp                       # 目标语言为 C++
+BasedOnStyle: Microsoft              # 基于 Microsoft 风格
+AccessModifierOffset: -4            # 访问修饰符缩进调整 -4（向左缩进 4 空格）
+IndentWidth: 4                       # 使用 2 个空格进行缩进
+AlignArrayOfStructures: Left         # 对齐结构体数组的方式为左对齐
+AlignTrailingComments: true               # 对齐尾随注释的设置
+#  Kind: Always                       # 始终对齐注释
+#  OverEmptyLines: 1                  # 注释跨越空行时对齐间隔为 1
+
+BreakBeforeBraces: Custom            # 大括号换行规则为自定义
+BraceWrapping:                       # 大括号的具体换行设置
+   AfterEnum: true                   # 枚举声明后换行
+   AfterCaseLabel: true              # case 标签后换行
+   AfterClass: true                  # 类声明后换行
+   AfterStruct: true                 # 结构体声明后换行
+   SplitEmptyFunction: true          # 空函数单独换行
+   AfterNamespace: true              # 命名空间后换行
+   AfterUnion: true                  # 联合声明后换行
+

@@ -2,7 +2,7 @@ return {
   "dgagn/diagflow.nvim",
   config = function()
     require("diagflow").setup({
-      enable = true, -- 启用诊断功能
+      enable = false, -- 启用诊断功能
       max_width = 60, -- 诊断消息的最大宽度
       max_height = 10, -- 每个诊断的最大高度
       severity_colors = { -- 每个诊断严重性级别使用的高亮组
@@ -10,6 +10,12 @@ return {
         warning = "DiagnosticFloatingWarn", -- 警告的高亮组
         info = "DiagnosticFloatingInfo", -- 信息的高亮组
         hint = "DiagnosticFloatingHint", -- 提示的高亮组
+      },
+      filters = {
+        {
+          source = "vim",
+          pattern = ".*",
+        },
       },
       format = function(diagnostic) -- 诊断消息的格式化函数
         if vim.fn.mode() == "i" then -- 如果是插入模式，则不显示诊断信息
@@ -26,13 +32,15 @@ return {
         end
         return sign .. " " .. diagnostic.message -- 返回格式化的诊断消息
       end,
+
+      -- 自定义诊断消息格式化函数
       gap_size = 0, -- 诊断消息与其他元素之间的间隙大小
       scope = "line", -- 诊断消息的作用范围，'line'表示显示整行的诊断，'cursor'表示只显示光标下的诊断
       padding_top = 0, -- 顶部填充
       padding_right = 0, -- 右侧填充
-      text_align = "right", -- 文字对齐方式，'left'表示左对齐，'right'表示右对齐
+      text_align = "left", -- 文字对齐方式，'left'表示左对齐，'right'表示右对齐
       placement = "inline", -- 诊断消息的显示位置，'top'表示显示在顶部，'inline'表示在行内显示
-      inline_padding_left = 8, -- 如果诊断消息显示在行内，左侧填充
+      inline_padding_left = 2, -- 如果诊断消息显示在行内，左侧填充
       update_event = { "DiagnosticChanged", "BufReadPost", "BufEnter" }, -- 更新诊断缓存的事件
       toggle_event = { "InsertEnter", "InsertLeave" }, -- 切换诊断显示的事件，例如进入插入模式时隐藏诊断，离开时显示
       show_sign = false, -- 是否在诊断消息前显示诊断标志，设置为true则显示

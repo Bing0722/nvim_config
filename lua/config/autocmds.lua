@@ -26,16 +26,11 @@ vim.keymap.set("n", "<F6>", function()
   run_exe.run_program(filetype)
 end)
 
-local save = require("config/function/select")
-vim.keymap.set("n", "<F8>", function()
-  save.ui()
-end)
+-- local save = require("config/function/select")
+-- vim.keymap.set("n", "<F8>", function()
+--   save.ui()
+-- end)
+
+vim.keymap.set("n", "<F8>", "<cmd>Run<CR>")
 
 require("config/commands/autotask")
-
-require("lspconfig").clangd.setup({
-  on_attach = function(client, bufnr)
-    -- 确保在 C++ 文件中启用 lsp_signature
-    require("lsp_signature").on_attach()
-  end,
-})

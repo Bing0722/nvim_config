@@ -11,7 +11,7 @@ return {
           function()
             return {
               exe = "clang-format", -- 使用 clang-format
-              args = { "---assume-filename=/home/bing/config/.clang-format" },
+              args = { "---assume-filename=/home/bing/.config/nvim/config/.clang-format" },
               stdin = true,
             }
           end,
@@ -22,7 +22,7 @@ return {
             return {
               exe = "clang-format", -- 使用 clang-format
               -- args = { "--assume-filename", vim.api.nvim_buf_get_name(0) },
-              args = { "--assume-filename=/home/bing/config/.clang-format" },
+              args = { "--assume-filename=/home/bing/.config/nvim/config/.clang-format" },
               stdin = true,
             }
           end,

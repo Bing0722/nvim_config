@@ -16,24 +16,21 @@ return {
         width = 0.98, -- 窗口布局宽度
         preview_cutoff = 1, -- 预览窗口的最小宽度
       },
-
       hide_numbers = true, -- 在 toggleterm 窗口中隐藏行号
-
       autochdir = true, -- 自动切换当前目录为终端的所在目录
-
       shade_terminals = false, -- 是否禁用终端背景色的阴影效果
 
       -- shell = "zsh", -- 设置默认 shell
       shell = "bash",
-      start_in_insert = true, -- 启动时进入插入模式
+      -- start_in_insert = true, -- 启动时进入插入模式
 
       -- 禁止自动滚动到终端的最底部
       auto_scroll = false,
 
       float_opts = {
         border = "curved", -- 设置浮动窗口的边框为 'curved'（圆角边框）
-        width = 70, -- 设置浮动窗口的宽度为 70
-        height = 18, -- 设置浮动窗口的高度为 18
+        width = 90, -- 设置浮动窗口的宽度为 70
+        height = 28, -- 设置浮动窗口的高度为 18
         winblend = 0, -- 设置窗口的透明度为 3
       },
 
@@ -57,6 +54,7 @@ return {
           return term.name
         end,
       },
+      close_on_exit = false, -- 退出时关闭终端
     })
 
     -- 定义 Terminal 实例
@@ -65,19 +63,16 @@ return {
     -- 定义浮动终端
     local ta = Terminal:new({
       direction = "float", -- 浮动窗口
-      close_on_exit = true, -- 退出时关闭终端
     })
 
     -- 定义垂直终端
     local tb = Terminal:new({
       direction = "vertical", -- 垂直窗口
-      close_on_exit = true, -- 退出时关闭终端
     })
 
     -- 定义水平终端
     local tc = Terminal:new({
       direction = "horizontal", -- 水平窗口
-      close_on_exit = true, -- 退出时关闭终端
     })
 
     -- 定义功能模块

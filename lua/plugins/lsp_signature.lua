@@ -3,6 +3,7 @@ return {
   {
     "ray-x/lsp_signature.nvim",
     event = "InsertEnter",
+    enabled = false,
     config = function()
       require("lsp_signature").setup({
         bind = true, -- 绑定按键，启用后可以通过按键手动触发签名提示
