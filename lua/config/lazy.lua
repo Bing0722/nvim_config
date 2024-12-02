@@ -19,14 +19,26 @@ require("lazy").setup({
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
-    -- { import = "lazyvim.plugins.extras.editor.telescope" },
+    { import = "lazyvim.plugins.extras.ui.edgy" },
+
     { import = "lazyvim.plugins.extras.editor.telescope" },
+    { import = "lazyvim.plugins.extras.editor.aerial" }, -- 快速浏览大纲
+    { import = "lazyvim.plugins.extras.editor.overseer" }, -- 自定义任务
+    { import = "lazyvim.plugins.extras.editor.refactoring" }, -- 重构
+    { import = "lazyvim.plugins.extras.editor.navic" }, -- 上方显示代码上下文
+    { import = "lazyvim.plugins.extras.editor.outline" }, -- 显示大纲
+    { import = "lazyvim.plugins.extras.editor.inc-rename" }, -- 丝滑的重命名
+    { import = "lazyvim.plugins.extras.editor.illuminate" }, -- 重复单词可以看到光标
+    -- { import = "lazyvim.plugins.extras.editor.fzf" },
 
     -- 启动时间
     { import = "lazyvim.plugins.extras.util.startuptime" },
+    { import = "lazyvim.plugins.extras.util.chezmoi" },
+    { import = "lazyvim.plugins.extras.util.dot" },
+    { import = "lazyvim.plugins.extras.util.gitui" },
+    { import = "lazyvim.plugins.extras.util.octo" },
+    { import = "lazyvim.plugins.extras.util.project" },
 
-    -- 重构
-    { import = "lazyvim.plugins.extras.editor.refactoring" },
     -- c++
     { import = "lazyvim.plugins.extras.lang.cmake" },
     { import = "lazyvim.plugins.extras.lang.clangd" },
@@ -34,20 +46,20 @@ require("lazy").setup({
     -- markdown
     { import = "lazyvim.plugins.extras.lang.markdown" },
 
-    -- 上方显示代码上下文
-    { import = "lazyvim.plugins.extras.editor.navic" },
     -- python
     { import = "lazyvim.plugins.extras.lang.python" },
 
     -- Neogen文档
     { import = "lazyvim.plugins.extras.coding.neogen" },
+    { import = "lazyvim.plugins.extras.coding.luasnip" },
+    { import = "lazyvim.plugins.extras.coding.mini-comment" },
+    { import = "lazyvim.plugins.extras.coding.mini-surround" }, -- 快速和高效地操作问本周围的符号
 
     { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
-
-    { import = "lazyvim.plugins.extras.coding.luasnip" },
-    { import = "lazyvim.plugins.extras.ui.treesitter-context" },
-    { import = "lazyvim.plugins.extras.ui.edgy" },
-    { import = "lazyvim.plugins.extras.editor.overseer" },
+    -- { import = "lazyvim.plugins.extras.ui.treesitter-context" },
+    -- { import = "lazyvim.plugins.extras.ui.mini-starter" },
+    -- { import = "lazyvim.plugins.extras.ui.alpha" },
+    -- { import = "lazyvim.plugins.extras.ui.dashboard-nvim" },
 
     -- lsp的某些配置
     { import = "lazyvim.plugins.extras.lsp.neoconf" },

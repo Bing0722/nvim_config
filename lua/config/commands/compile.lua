@@ -7,14 +7,14 @@ function M.compile_program(filetype)
   -- 系统自带的
   -- vim.ui.input({ prompt = "请输入参数: ", default = "-std=c++17 -g" }, function(input)
   local K1 = require("config/function/input")
-  K1.input({ text_top = "[请输入参数]", default = "-std=c++17 -g" }, function(input_args)
+  K1.input({ text_top = "[请输入编译时的参数]", default = "-std=c++17 -g" }, function(input_args)
     -- 如果用户取消输入，则返回
     if not input_args or input_args == "" then
       notify("编译已取消.", "warn", { title = "Compile Program" })
       return
     end
     local K2 = require("config/function/input")
-    K2.input({ text_top = "[请输入链接]", default = "" }, function(input_link)
+    K2.input({ text_top = "[请输入需要链接的库]", default = "" }, function(input_link)
       local is_link
       if input_link == "" then
         is_link = "无需进行链接.\n"

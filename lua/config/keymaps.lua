@@ -3,6 +3,9 @@
 -- Add any additional keymaps here
 local map = vim.keymap.set
 
+-- 禁用 q 键的录制宏功能
+vim.api.nvim_set_keymap("n", "q", ':echo "录制宏功能已被禁用." <CR>', { noremap = true, silent = true })
+
 map("n", "<C-s>", ":write<CR>", { noremap = true, silent = true, desc = "保存" })
 
 -- 更好的上下移动处理
@@ -98,3 +101,6 @@ map("n", "<leader>w", "<c-w>", { desc = "窗口命令模式", remap = true })
 map("n", "<leader>-", "<C-W>s", { desc = "水平分割窗口", remap = true })
 map("n", "<leader>|", "<C-W>v", { desc = "垂直分割窗口", remap = true })
 map("n", "<leader>wd", "<C-W>c", { desc = "关闭当前窗口", remap = true })
+
+-- 自定义快捷键，在括号或引号内跳出
+vim.api.nvim_set_keymap("i", "<C-e>", "<Esc>la", { noremap = true, silent = true })
